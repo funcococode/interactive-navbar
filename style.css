@@ -94,15 +94,23 @@ li.vis {
   position: absolute;
   right: 0;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translate(20px, -30%) skewY(2deg) skewX(5deg);
+          transform: translate(20px, -30%) skewY(2deg) skewX(5deg);
+  -webkit-transform-origin: left;
+          transform-origin: left;
   opacity: 0;
   visibility: hidden;
   font-size: 18px;
   letter-spacing: 2px;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.5s, -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s;
+  transition: transform 0.5s ease-in-out, opacity 0.5s, -webkit-transform 0.5s ease-in-out;
 }
 
 .navItemDesc.vis {
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   opacity: 1;
   visibility: visible;
 }
